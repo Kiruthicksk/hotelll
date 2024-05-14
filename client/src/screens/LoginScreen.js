@@ -50,6 +50,7 @@ function LoginScreen() {
                 setEmail(e.target.value);
               }}
             />
+            <br/>
             <input
               type="password"
               className="form-control"
