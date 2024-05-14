@@ -9,7 +9,7 @@ import Loader from "../components/Loader";
 import Error from "../components/Error";
 
 import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
+import "aos/dist/aos.css"; 
 // ..
 AOS.init({
   duration: 1000,
@@ -48,8 +48,6 @@ function Homescreen() {
   }, []);
 
   function filterByDate(dates) {
-    // console.log(moment(dates[0]).format("DD-MM-YYYY"));
-    // console.log(moment(dates[1]).format("DD-MM-YYYY"));
     try {
       setFromDate(moment(dates[0]).format("DD-MM-YYYY"));
       setToDate(moment(dates[1]).format("DD-MM-YYYY"));
