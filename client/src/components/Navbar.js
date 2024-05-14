@@ -10,32 +10,63 @@ function Navbar() {
 
   const navAction = () => {
     if (user) {
-      return (
-        <ul className="navbar-nav mr-5">
-          <div className="dropdown">
-            <button
-              className="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <i className="fas fa-user mr-2"></i>
-              {user.name}
-            </button>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a className="dropdown-item" href="/profile">
-                Profile
-              </a>
-
-              <a className="dropdown-item" href="#" onClick={Logout}>
-                Logout
-              </a>
+      if (user.isAdmin) {
+        // If user is admin, show dashboard option
+        return (
+          <ul className="navbar-nav mr-5">
+            <div className="dropdown">
+              <button
+                className="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i className="fas fa-user mr-2"></i>
+                {user.name}
+              </button>
+              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a className="dropdown-item" href="/admin">
+                  Dashboard
+                </a>
+                <a className="dropdown-item" href="/profile">
+                  Profile
+                </a>
+                <a className="dropdown-item" href="#" onClick={Logout}>
+                  Logout
+                </a>
+              </div>
             </div>
-          </div>
-        </ul>
-      );
+          </ul>
+        );
+      } else {
+        return (
+          <ul className="navbar-nav mr-5">
+            <div className="dropdown">
+              <button
+                className="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i className="fas fa-user mr-2"></i>
+                {user.name}
+              </button>
+              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a className="dropdown-item" href="/profile">
+                  Profile
+                </a>
+                <a className="dropdown-item" href="#" onClick={Logout}>
+                  Logout
+                </a>
+              </div>
+            </div>
+          </ul>
+        );
+      }
     }
 
     return (
@@ -58,7 +89,7 @@ function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg">
         <a className="navbar-brand" href="/home">
-         HOTEL MANI'S LODGE
+          HOTEL MANI'S LODGE
         </a>
         <button
           className="navbar-toggler"
@@ -70,7 +101,7 @@ function Navbar() {
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon">
-            <i class="fas fa-bars" style={{ color: "white" }}></i>
+            <i className="fas fa-bars" style={{ color: "white" }}></i>
           </span>
         </button>
 
