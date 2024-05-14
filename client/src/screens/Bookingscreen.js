@@ -109,7 +109,7 @@ function Bookingscreen({ match }) {
                 <p>Total Amount : {totalAmount}</p>
               </b>
             </div>
-            <button onClick={pay}>Pay Now</button>
+            <button style={{ backgroundColor: "#0938E8", color: "white", padding: "10px", borderRadius: "5px", cursor: "pointer" }} onClick={pay}>Pay Now</button>
           </div>
         </div>
       )}
